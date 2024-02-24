@@ -7,7 +7,7 @@ module.exports = {
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
-        project: true,
+        project: ["tsconfig.json"],
         tsconfigRootDir: __dirname,
     },
     plugins: ["@typescript-eslint"],
@@ -15,7 +15,7 @@ module.exports = {
     overrides: [
         {
             extends: ["plugin:@typescript-eslint/disable-type-checked"],
-            files: ["*.js", "*.cjs"],
+            files: ["*.js", "*.cjs", "test/**"],
         },
         // {
         //     extends: [

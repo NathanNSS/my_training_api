@@ -8,7 +8,6 @@ import {headerSecurity} from "./middlewares/ headerSecurity";
 import {genericPrevBruteForce, loginPrevBruteForce} from "./middlewares/PrevBruteForce";
 
 const app = express();
-const port = 5000;
 
 app.disable("x-powered-by"); //Segurança: reduzir a impressão digital do servidor
 app.set("trust proxy", true); //Auxilia para capturar um IP confiável
@@ -26,4 +25,4 @@ app.use("/", routerUser);
 
 app.use(errorHandling);
 
-app.listen(port, () => console.log("✔ Server Running"));
+export {app};
